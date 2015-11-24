@@ -5,7 +5,7 @@ $(function() {
 
     $("#tooltip").hide();
 
-    $("#demo").click(function() {
+    $("#beer1").click(function() {
         $("#tooltip").toggle("slow");
     });
 

@@ -6,82 +6,65 @@
     <link rel="stylesheet" type="text/css" href="general2.css">
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
     <script type="text/javascript" src="hideMe.js"></script>
+    <script type="text/javascript" src="draganddrop.js"></script>
 </head>
 <body>
-
 <div id="headline">
-    <div id="Logo">
-        <img src="Ships.jpg" width="100%">
-    </div>
+    <h2>Flying Dutchman Group 8</h2>
 </div>
-<div>
-    <div id="languagebar">
-        <div>
-            <img src="UK_flag.png" width="5%" style="float:right">
-            <img src="Sweden_Flag.png" width="5%" style="float:right">
-        </div>
-    </div>
+<div id="languagebar">
+    <img src="UK_flag.png" width="3%" style="float:right">
+    <img src="Sweden_Flag.png" width="3%" style="float:right">
 </div>
 <div>
     <div id="search">
-        <div class="button" id="searchButton">Search</div>
+        <div class="button" id="searchButton">Search<img src="searchicon.png" width="5%"style="float:right"></div>
         <div class="expander" id="searchField">Advance search</div>
     </div>
 
 </div>
 
+<div id="beerwrapper">
 
-<div id="bodywrapper">
-
-    <div id="sidebar">
-        <div class="button" id="demo">First Button</div>
+    <div id="beerlist" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="button" id="deer1" draggable="true" ondragstart="drag(event)">First Button</div>
         <div class="expander" id="tooltip">This is some text to display when clicked.</div>
-        <div class="button">Second Button</div>
-        <div class="button">Third Button</div>
-        <div class="button">Fourth Button</div>
-        <div class="button">Fifth Button</div>
-        <div class="button">Second Button</div>
-        <div class="button">Third Button</div>
-        <div class="button">Fourth Button</div>
-        <div class="button">Fifth Button</div>
-        <div class="button">Second Button</div>
-        <div class="button">Third Button</div>
-        <div class="button">Fourth Button</div>
-        <div class="button">Fifth Button</div>
-        <div class="button">Second Button</div>
-        <div class="button">Third Button</div>
-        <div class="button">Fourth Button</div>
-        <div class="button">Fifth Button</div>
+        <div class="button" id="deer2" draggable="true" ondragstart="drag(event)">Second Button</div>
+        <div class="button" id="deer3" draggable="true" ondragstart="drag(event)">Third Button</div>
+        <div class="button" id="deer4" draggable="true" ondragstart="drag(event)">Fourth Button</div>
+        <div class="button" id="deer5" draggable="true" ondragstart="drag(event)">Fifth Button</div>
+        <div class="button" id="deer6" draggable="true" ondragstart="drag(event)">Second Button</div>
+        <div class="button" id="deer7" draggable="true" ondragstart="drag(event)">Third Button</div>
+        <div class="button" id="deer8" draggable="true" ondragstart="drag(event)">Fourth Button</div>
+        <div class="button" id="deer9" draggable="true" ondragstart="drag(event)">Fifth Button</div>
+        <div class="button" id="deer10" draggable="true" ondragstart="drag(event)">Second Button</div>
+        <div class="button" id="deer11" draggable="true" ondragstart="drag(event)">Third Button</div>
+        <div class="button" id="deer12" draggable="true" ondragstart="drag(event)">Fourth Button</div>
+        <div class="button" id="deer13" draggable="true" ondragstart="drag(event)">Fifth Button</div>
+        <div class="button" id="deer14" draggable="true" ondragstart="drag(event)">Second Button</div>
+        <div class="button" id="deer15" draggable="true" ondragstart="drag(event)">Third Button</div>
+        <div class="button" id="deer16" draggable="true" ondragstart="drag(event)">Fourth Button</div>
+        <div class="button" id="deer17" draggable="true" ondragstart="drag(event)">Fifth Button</div>
     </div>
 
-    <div id=" contentwrapper">
-        <div id="content">
-            <h1>Content</h1>
+    <div id="cartwrapper">
+        <div><img src="cart.png" width="5%">Order List</div>
+        <div id="cartlist" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
 
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet
-                dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit
-                in
-                vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-                accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
-                feugait
-                nulla facilisi.</p>
+        </div>
 
-            <p></p> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
-            placerat
-            facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
-            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus
-            dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc
-            putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.
-            Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+        <div id="totalprice">
+            <p>Total Price: </p>
+
+        </div>
+
+        <div id="buy">
+
         </div>
     </div>
 
     <div id="foot">
-        &copy; Lars Oestreicher (of course copyright here is stupid, since you can make it yourself...)
-        email: lars.oestreicher@it.uu.se
-
+        &copy; PeiChun Chen, Jesper Middendorff, Johanna Maria 2015 UU User Interface Group 8
     </div>
 
 </div>
