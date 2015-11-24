@@ -6,10 +6,31 @@
     <link rel="stylesheet" type="text/css" href="general.css">
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
     <script type="text/javascript" src="hideMe.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("input").focus(function(){
+                $("input").css("background-color","#FFFFCC");
+            });
+            $("input").blur(function(){
+                $("input").css("background-color","#D6D6FF");
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="theme">
     <img src="Ships.jpg" width="100%">
+    <div id="welcome">
+        <h4>Welcome to Flying Dutchman Group 8<br>
+        Login to order the beer!</h4>
+    </div>
+    <div id="username">
+        <h3>Username: <input type="text" /> </h3>
+    </div>
+    <div id="password">
+        <h3>Password: <input type="text" /> </h3>
+    </div>
+    <div id="login"> Login </div>
 </div>
 </body>
 </html>
