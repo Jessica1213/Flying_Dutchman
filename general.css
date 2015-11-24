@@ -1,0 +1,69 @@
+
+
+div {
+    background-color: #000000;
+
+    /* Using borders to show how things are laid out */
+    /* */
+    /*border: solid 2px #B1689A;*/
+
+}
+
+#sidebar {
+    float: left;
+    width: 20%;
+    margin: auto;
+    padding-bottom: 50%;
+    border-right: 2px dotted #72672C;
+}
+
+#content {
+    float:left;
+    width: 50%;
+    margin: 10px;
+
+}
+
+.button {
+    border-radius: 10px;
+    border-spacing: 3px;
+    background-color: #72672C;
+    color: white;
+    margin: 2px;
+}
+
+body {
+    font-family: sans-serif;
+    font-family: sans-serif;
+    width: 80%; /* Relative size */
+    margin: auto; /* Centers the body on the page.  */
+    background-color: #50A3A5;
+}
+
+ul#menu li {
+    display: inline;   /* makes the <li> element turn into a horizontal menu. */
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+
+    /* Gives a tab-like appearance to the div */
+    /**/
+    border-radius: 10px 10px 0 0;
+
+}
+
+#bodywrapper {
+
+}
+
+#foot {
+    clear: both;
+    background-color: #225758;
+    color: white;
+}
+
+div {
+    padding: 10px;
+    border-spacing: 10px;
+}

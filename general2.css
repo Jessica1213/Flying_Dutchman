@@ -1,0 +1,90 @@
+/*headline*/
+/*div {*/
+    /*!*background-color: #25B1CC;*!*/
+    /*background-color: #FFF7E6;*/
+
+    /*!* Using borders to show how things are laid out *!*/
+    /*!*border: solid 2px #B1689A;*!*/
+/*}*/
+
+#sidebar {
+    float: left;
+    width: 60%;
+    height: 200px;
+    margin: auto;
+    padding-bottom: 30%;
+    overflow: scroll;
+}
+
+#content {
+    float:left;
+    width: 30%;
+    height: 200px;
+    margin: auto;
+    padding-bottom: 30%;
+    border: 5px black;
+    background-color: darkgray;
+    opacity: 0.3;
+    overflow: scroll;
+    border-radius: 10px 10px 0 0;
+
+
+}
+
+.expander{
+    position:absolute;
+    border: 2px darkgrey solid;
+    border-radius:0px 20px 20px 20px;
+    z-index:2;
+}
+
+.button {
+    border-radius: 10px;
+    border-spacing: 3px;
+    background-color: #006600;
+    color: white;
+    margin: 2px;
+}
+
+body {
+    font-family: sans-serif;
+    font-family: sans-serif;
+    width: 80%; /* Relative size */
+    margin: auto; /* Centers the body on the page.  */
+    /*background-color: #FFF7E6;*/
+    /*background-color: #25B1CC;*/
+    background-image: url("shelf.png");
+}
+
+ul#language li {
+    display: inline;   /* makes the <li> element turn into a horizontal menu. */
+    /*background-color: black;*/
+    /*color: white;*/
+    float: right;
+    /*padding: 5px 10px;*/
+    /*text-decoration: none;*/
+    /**/
+    /* Gives a tab-like appearance to the div */
+    /**/
+    /*border-radius: 10px 10px 0 0;*/
+
+}
+
+#search {
+    width:50%;
+}
+
+#bodywrapper {
+
+}
+
+#foot {
+    clear: both;
+    background-color: #225758;
+    color: white;
+}
+
+div {
+    padding: 10px;
+    border-spacing: 10px;
+}
