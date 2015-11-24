@@ -1,14 +1,10 @@
 
-
-div {
-    background-color: #000000;
-
-    /* Using borders to show how things are laid out */
-    /* */
-    /*border: solid 2px #B1689A;*/
-
+.theme {
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    left: 10%;
 }
-
 #sidebar {
     float: left;
     width: 20%;
@@ -36,8 +32,8 @@ body {
     font-family: sans-serif;
     font-family: sans-serif;
     width: 80%; /* Relative size */
-    margin: auto; /* Centers the body on the page.  */
-    background-color: #50A3A5;
+    /*margin: auto; !* Centers the body on the page.  *!*/
+    background-color: black;
 }
 
 ul#menu li {

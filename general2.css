@@ -57,7 +57,8 @@ body {
 }
 
 ul#language li {
-    display: inline;   /* makes the <li> element turn into a horizontal menu. */
+    /*display: inline;  */
+    /* makes the <li> element turn into a horizontal menu. */
     /*background-color: black;*/
     /*color: white;*/
     float: right;
