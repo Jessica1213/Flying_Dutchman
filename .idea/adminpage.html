@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flying Dutchman 8</title>
+    <link rel="stylesheet" type="text/css" href="adminpagestyle.css">
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="hideMe.js"></script>
+    <script type="text/javascript" src="draganddrop.js"></script>
+</head>
+<body>
+<div id="headline">
+    <h2>Administrator page</h2>
+</div>
+<div id="languagebar">
+    <img src="UK_flag.png" width="3%" style="float:right">
+    <img src="Sweden_Flag.png" width="3%" style="float:right">
+</div>
+<div>
+    <div id="search">
+        <div class="button" id="searchButton">Search<img src="searchicon.png" width="5%"style="float:right"></div>
+        <div class="expander" id="searchField">Advance search</div>
+    </div>
+
+</div>
+
+<div id="beerwrapper">
+
+    <div id="beerlist" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="button" id="deer1" draggable="true" ondragstart="drag(event)">First Button</div>
+        <div class="expander" id="tooltip">This is some text to display when clicked.</div>
+        <div class="button" id="deer2" draggable="true" ondragstart="drag(event)">Second Button</div>
+        <div class="button" id="deer3" draggable="true" ondragstart="drag(event)">Third Button</div>
+        <div class="button" id="deer4" draggable="true" ondragstart="drag(event)">Fourth Button</div>
+        <div class="button" id="deer5" draggable="true" ondragstart="drag(event)">Fifth Button</div>
+        <div class="button" id="deer6" draggable="true" ondragstart="drag(event)">Second Button</div>
+        <div class="button" id="deer7" draggable="true" ondragstart="drag(event)">Third Button</div>
+        <div class="button" id="deer8" draggable="true" ondragstart="drag(event)">Fourth Button</div>
+        <div class="button" id="deer9" draggable="true" ondragstart="drag(event)">Fifth Button</div>
+        <div class="button" id="deer10" draggable="true" ondragstart="drag(event)">Second Button</div>
+        <div class="button" id="deer11" draggable="true" ondragstart="drag(event)">Third Button</div>
+        <div class="button" id="deer12" draggable="true" ondragstart="drag(event)">Fourth Button</div>
+        <div class="button" id="deer13" draggable="true" ondragstart="drag(event)">Fifth Button</div>
+        <div class="button" id="deer14" draggable="true" ondragstart="drag(event)">Second Button</div>
+        <div class="button" id="deer15" draggable="true" ondragstart="drag(event)">Third Button</div>
+        <div class="button" id="deer16" draggable="true" ondragstart="drag(event)">Fourth Button</div>
+        <div class="button" id="deer17" draggable="true" ondragstart="drag(event)">Fifth Button</div>
+    </div>
+
+    <div id="cartwrapper">
+        <div><img src="cart.png" width="5%">Order List</div>
+        <div id="cartlist" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+        </div>
+
+        <div id="totalprice">
+            <p>Total Price: </p>
+
+        </div>
+
+        <div id="buy">
+
+        </div>
+    </div>
+
+    <div id="foot">
+        &copy; PeiChun Chen, Jesper Middendorff, Johanna Fyrvald 2015 UU User Interface Group 8
+    </div>
+
+</div>
+
+</body>
+</html>

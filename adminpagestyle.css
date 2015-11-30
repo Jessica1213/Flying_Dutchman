@@ -33,6 +33,27 @@ div {
     width:50%;
 }
 
+#sidebar {
+    float: left;
+    width: 20%;
+    height: 200px;
+    margin: auto;
+    padding-bottom: 30%;
+    overflow: scroll;
+
+}
+
+.adminbutton {
+    border-radius: 10px;
+    border-spacing: 3px;
+    background-color: #484848;
+    color: black;
+    margin: 2px;
+
+
+}
+
+
 #beerlist {
     float: left;
     width: 45%;
