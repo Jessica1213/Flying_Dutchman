@@ -4,7 +4,7 @@ div {
     /*background-color: #FFF7E6;*/
 
     /* Using borders to show how things are laid out */
-    /*border: solid 2px #B1689A;*/
+    border: solid 2px #B1689A;
 }
 
 #headline {
@@ -42,6 +42,12 @@ div {
     overflow: scroll;
 }
 
+#beershelf {
+    float: left;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 30%;
+}
 #cartwrapper {
     font-family: Chalkboard;
     font-weight: bold;
@@ -68,7 +74,7 @@ div {
 .button {
     border-radius: 10px;
     border-spacing: 3px;
-    background-color: #006600;
+    /*background-color: #006600;*/
     color: white;
     margin: 2px;
 }
