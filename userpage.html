@@ -25,65 +25,65 @@
     <h1>&nbsp&nbspPlace your order here!!</h1>
 </div>
 
-<div id="search">
-    <div class="button" id="searchButton">Search<img src="searchicon.png" width="5%" style="float:right"></div>
+<div class="button" id="search" style="height:35px;line-height:35px;">
+    &nbsp&nbsp&nbspSearch<img src="searchicon.png" width="5%" style="float:right">
     <div class="expander" id="searchField">Advance search</div>
 </div>
 
-
 <div id="beerwrapper">
-
-    <!--<div id="beerlist" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)">-->
-
-    <!--</div>-->
-    <div id="beerlist" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div class="beershelf">
-            <div class="button" id="beer1" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="beer.png" width="20%"></div>
-            <!--<div class="button" id="beer2" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="20%"></div>-->
-            <!--<div class="button" id="beer3" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="20%"></div>-->
-            <!--<div class="button" id="beer4" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="20%"></div>-->
-            <!--<div class="button" id="beer5" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="20%"></div>-->
-        </div>
-        <!--<div class="button" id="deer1" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="20%"></div>-->
-        <!--<div class="expander" id="tooltip">This is some text to display when clicked.</div>-->
-        <!--<div class="button" id="deer2" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="20%"></div>-->
-        <!--<div class="button" id="deer3" draggable="true" ondragstart="drag(event)">Third Button</div>-->
-        <!--<div class="button" id="deer4" draggable="true" ondragstart="drag(event)">Fourth Button</div>-->
-        <!--<div class="button" id="deer5" draggable="true" ondragstart="drag(event)">Fifth Button</div>-->
-        <!--<div class="button" id="deer6" draggable="true" ondragstart="drag(event)">Second Button</div>-->
-        <!--<div class="button" id="deer7" draggable="true" ondragstart="drag(event)">Third Button</div>-->
-        <!--<div class="button" id="deer8" draggable="true" ondragstart="drag(event)">Fourth Button</div>-->
-        <!--<div class="button" id="deer9" draggable="true" ondragstart="drag(event)">Fifth Button</div>-->
-        <!--<div class="button" id="deer10" draggable="true" ondragstart="drag(event)">Second Button</div>-->
-        <!--<div class="button" id="deer11" draggable="true" ondragstart="drag(event)">Third Button</div>-->
-        <!--<div class="button" id="deer12" draggable="true" ondragstart="drag(event)">Fourth Button</div>-->
-        <!--<div class="button" id="deer13" draggable="true" ondragstart="drag(event)">Fifth Button</div>-->
-        <!--<div class="button" id="deer14" draggable="true" ondragstart="drag(event)">Second Button</div>-->
-        <!--<div class="button" id="deer15" draggable="true" ondragstart="drag(event)">Third Button</div>-->
-        <!--<div class="button" id="deer16" draggable="true" ondragstart="drag(event)">Fourth Button</div>-->
-        <!--<div class="button" id="deer17" draggable="true" ondragstart="drag(event)">Fifth Button</div>-->
+    <div style="height: 50px; text-align:center;line-height: 50px;">
+        Drag the beer you want to the order list
     </div>
-
-    <div id="cartwrapper">
-        <div><img src="cart.png" width="5%">Order List</div>
-        <div id="cartlist" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
-
-        </div>
-
-        <div id="totalprice">
-            <p>Total Price: </p>
+    <div id="beerlist">
+        <div class="beershelf" id="beerrow1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="button" id="beer1" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer2" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer3" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer4" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
 
         </div>
-
-        <div id="buy">
-
+        <div class="beershelf" id="beerrow2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="button" id="beer5" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer6" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer7" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer8" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+        </div>
+        <div class="beershelf" id="beerrow3" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="button" id="beer9" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer10" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer11" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
+            <div class="button" id="beer12" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
         </div>
     </div>
 
-    <div id="foot">
-        &copy; PeiChun Chen, Jesper Middendorff, Johanna Fyrvald 2015 UU User Interface Group 8
+</div>
+
+
+<div id="cartwrapper">
+    <div style="height: 50px;line-height: 50px;">
+        <img src="cart.png" width="18%" style="float:left">
+        &nbsp&nbspOrder List
+    </div>
+    <div id="cartlist" ondrop="drop(event)" ondragover="allowDrop(event)">
+
     </div>
 
+    <div id="totalprice">
+        <h3>&nbsp&nbspTotal Price: </h3>
+
+    </div>
+
+    <div id="buy" style="height: 50px;line-height: 50px;">
+        &nbsp&nbsp Pay Now
+        <img src="pay.png" width="20%" style="float:right">
+    </div>
+
+</div>
+
+
+
+<div id="foot">
+    &copy; PeiChun Chen, Jesper Middendorff, Johanna Fyrvald 2015 UU User Interface Group 8
 </div>
 
 </body>

@@ -5,7 +5,7 @@ $(function() {
 
     $("#searchField").hide();
 
-    $("#searchButton").click(function() {
+    $("#search").click(function() {
         $("#searchField").toggle("slow");
     });
 

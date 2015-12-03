@@ -15,6 +15,7 @@ function allowDrop(ev) {
 //
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
+
 }
 
 // The drop function determines what happens when you drop the source item
@@ -29,6 +30,7 @@ function drop(ev) {
     ev.dataTransfer.dropEffect="copy";
 
     var data = ev.dataTransfer.getData("text");
+
     // If we use .cloneNode(true) the dragging results in a copy, rather than
     // a move of the source.
     //
@@ -36,11 +38,13 @@ function drop(ev) {
 
     nodeCopy.id = "newId";                 /* We cannot use the same ID */
 
-    ev.target.appendChild(document.getElementById(data));
+    ev.target.appendChild(nodeCopy);
 
     // Move the source element to the target. This is often the standard
     // action.
     //
+    // ev.target.appendChild(document.getElementById(data));
 }
+
 
 
