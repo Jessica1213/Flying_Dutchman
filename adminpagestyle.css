@@ -4,12 +4,16 @@ div {
     /*background-color: #FFF7E6;*/
 
     /* Using borders to show how things are laid out */
-    /*border: solid 2px #B1689A;*/
+    border: solid 2px #B1689A;
 }
 
 #headline {
-    font-family: "Chalkboard SE";
+    font-family: "Luminari";
+    font-weight: bolder;
     color: #006600;
+    float: left;
+    margin: auto;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 }
 
 #language {
@@ -49,7 +53,6 @@ div {
     background-color: #484848;
     color: black;
     margin: 2px;
-
 
 }
 
