@@ -7,6 +7,13 @@ div {
     /*border: solid 2px #B1689A;*/
 }
 
+input {
+    width:25px;
+    height:20px;
+    border-radius: 10px;
+    border-width: 0px;
+}
+
 #headline {
     display: inline;
     font-family: "Luminari";
@@ -22,6 +29,7 @@ div {
     margin: auto;
     float:right;
 }
+
 
 #search {
     display: inline-block;

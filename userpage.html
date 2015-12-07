@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
     <title>Flying Dutchman 8</title>
@@ -8,32 +9,63 @@
     <script type="text/javascript" src="hideMe.js"></script>
     <script type="text/javascript" src="draganddrop.js"></script>
     <script type="text/javascript" src="barmenu.js"></script>
+    <script type="text/javascript" scr="i18next-1.11.2.js"></script>
+    <script type="text/javascript" scr="i18next-1.11.2.min.js"></script>
+    <script type="text/javascript" src="language.js"></script>
+    <script>
+        function change_lang(lan_index)
+        {
+            var myLangArray;
+            switch(lan_index)
+            {
+                case 1:
+                    myLangArray = Lang_tw;
+                    break;
+                case 2:
+                    myLangArray = Lang_se;
+                    break;
+                default:
+                    myLangArray = Lang_en;
+                    break;
+            }
+            document.getElementById('L0').innerHTML = myLangArray[0];
+            document.getElementById('L1').innerHTML = myLangArray[1];
+            document.getElementById('L2').innerHTML = myLangArray[2];
+            document.getElementById('L3').innerHTML = myLangArray[3];
+            document.getElementById('L4').innerHTML = myLangArray[4];
+            document.getElementById('L5').innerHTML = myLangArray[5];
+        }
+    </script>
+
 </head>
 
 <body>
+
 <div>
     <img src="beerbar4.png" width="105%">
 </div>
 
 <div id="languagebar">
-    <img src="UK_flag.png" width="7%" style="float:right">
-    <img src="Sweden_Flag.png" width="7%" style="float:right">
+    <input type="button" onclick="change_lang(0)" style="background-image: url(UK_Flag.png);">&nbsp;
+    <input type="button" onclick="change_lang(1)" style="background-image: url(Taiwan_Flag.png);">&nbsp;
+    <input type="button" onclick="change_lang(2)" style="background-image: url(Sweden_Flag.png);">&nbsp;
 </div>
 
 <div id="headline">
     <img src="logo.png" width="12%" style="float:left">
-    <h1>&nbsp&nbspPlace your order here!!</h1>
+    <h1>&nbsp&nbsp<span id="L0"></span></h1>
 </div>
 
 <div class="button" id="search" style="height:35px;line-height:35px;">
-    &nbsp&nbsp&nbspSearch<img src="searchicon.png" width="5%" style="float:right">
+    &nbsp&nbsp&nbsp<span id="L1"></span><img src="searchicon.png" width="5%" style="float:right">
     <div class="expander" id="searchField">Advance search</div>
 </div>
 
 <div id="beerwrapper">
     <div style="height: 50px; text-align:center;line-height: 50px;">
-        Drag the beer you want to the order list
+        <span id="L2"></span>
     </div>
+
     <div id="beerlist">
         <div class="beershelf" id="beerrow1" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div class="button" id="beer1" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
@@ -62,19 +94,19 @@
 <div id="cartwrapper">
     <div style="height: 50px;line-height: 50px;">
         <img src="cart.png" width="18%" style="float:left">
-        &nbsp&nbspOrder List
+        &nbsp&nbsp<span id="L3"></span>
     </div>
     <div id="cartlist" ondrop="drop(event)" ondragover="allowDrop(event)">
 
     </div>
 
     <div id="totalprice">
-        <h3>&nbsp&nbspTotal Price: </h3>
+        <h3>&nbsp&nbsp<span id="L4"></span> </h3>
 
     </div>
 
     <div id="buy" style="height: 50px;line-height: 50px;">
-        &nbsp&nbsp Pay Now
+        &nbsp&nbsp <span id="L5"></span>
         <img src="pay.png" width="20%" style="float:right">
     </div>
 
@@ -86,5 +118,6 @@
     &copy; PeiChun Chen, Jesper Middendorff, Johanna Fyrvald 2015 UU User Interface Group 8
 </div>
 
+<script>change_lang(0)</script>
 </body>
 </html>
