@@ -40,6 +40,7 @@ function drop(ev) {
 
     ev.target.appendChild(nodeCopy);
 
+
     // Move the source element to the target. This is often the standard
     // action.
     //

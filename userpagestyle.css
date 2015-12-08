@@ -69,19 +69,16 @@ input {
 
 #beerlist {
     overflow: scroll;
-    height: 400px;
-}
-
-.beershelf {
+    height: 250px;
     float: left;
     width: 99%;
-    height: 10px;
     margin: auto;
     padding-bottom: 30%;
     color: white;
     text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
     font-family: "Luminari";
 }
+
 
 
 #cartwrapper {

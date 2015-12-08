@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,37 +10,12 @@
     <script type="text/javascript" src="draganddrop.js"></script>
     <script type="text/javascript" src="barmenu.js"></script>
     <script type="text/javascript" src="language.js"></script>
-    <script>
-        function change_lang(lan_index)
-        {
-            var myLangArray;
-            switch(lan_index)
-            {
-                case 1:
-                    myLangArray = Lang_tw;
-                    break;
-                case 2:
-                    myLangArray = Lang_se;
-                    break;
-                default:
-                    myLangArray = Lang_en;
-                    break;
-            }
-            document.getElementById('L0').innerHTML = myLangArray[0];
-            document.getElementById('L1').innerHTML = myLangArray[1];
-            document.getElementById('L2').innerHTML = myLangArray[2];
-            document.getElementById('L3').innerHTML = myLangArray[3];
-            document.getElementById('L4').innerHTML = myLangArray[4];
-            document.getElementById('L5').innerHTML = myLangArray[5];
-        }
-    </script>
-
 </head>
 
 <body>
 
 <div>
-    <img src="beerbar4.png" width="105%">
+    <img src="beerbar4.png" width="95%">
 </div>
 
 <div id="languagebar">
@@ -64,26 +39,7 @@
         <span id="L2"></span>
     </div>
 
-    <div id="beerlist">
-        <div class="beershelf" id="beerrow1" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div class="button" id="beer1" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer2" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer3" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer4" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-
-        </div>
-        <div class="beershelf" id="beerrow2" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div class="button" id="beer5" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer6" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer7" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer8" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-        </div>
-        <div class="beershelf" id="beerrow3" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div class="button" id="beer9" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer10" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer11" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-            <div class="button" id="beer12" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="60%"></div>
-        </div>
+    <div id="beerlist" ondrop="drop(event)" ondragover="allowDrop(event)">
     </div>
 
 </div>
@@ -94,17 +50,16 @@
         <img src="cart.png" width="18%" style="float:left">
         &nbsp&nbsp<span id="L3"></span>
     </div>
-    <div id="cartlist" ondrop="drop(event)" ondragover="allowDrop(event)">
 
+    <div id="cartlist" ondrop="drop(event)" ondragover="allowDrop(event)">
     </div>
 
     <div id="totalprice">
         <h3>&nbsp&nbsp<span id="L4"></span> </h3>
-
     </div>
 
     <div id="buy" style="height: 50px;line-height: 50px;">
-        &nbsp&nbsp <span id="L5"></span>
+        &nbsp&nbsp<span id="L5"></span>
         <img src="pay.png" width="20%" style="float:right">
     </div>
 

@@ -1,6 +1,28 @@
 /**
  * Created by jessica on 12/4/15.
  */
+function change_lang(lan_index)
+{
+    var myLangArray;
+    switch(lan_index)
+    {
+        case 1:
+            myLangArray = Lang_tw;
+            break;
+        case 2:
+            myLangArray = Lang_se;
+            break;
+        default:
+            myLangArray = Lang_en;
+            break;
+    }
+    document.getElementById('L0').innerHTML = myLangArray[0];
+    document.getElementById('L1').innerHTML = myLangArray[1];
+    document.getElementById('L2').innerHTML = myLangArray[2];
+    document.getElementById('L3').innerHTML = myLangArray[3];
+    document.getElementById('L4').innerHTML = myLangArray[4];
+    document.getElementById('L5').innerHTML = myLangArray[5];
+}
 
 //Taiwan
 Lang_tw = new Array();
