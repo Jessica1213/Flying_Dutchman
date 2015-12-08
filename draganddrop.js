@@ -6,7 +6,6 @@
 // as it is. It will prevent the default behaviour, which is not to accept
 // any drops.
 //
-
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -39,13 +38,73 @@ function drop(ev) {
 
     nodeCopy.id = "newId";                 /* We cannot use the same ID */
 
+    nodeCopy.draggable = "false";
+
     ev.target.appendChild(nodeCopy);
 
-    // Move the source element to the target. This is often the standard
-    // action.
+    // Get the ID of the target (the order).
     //
-    // ev.target.appendChild(document.getElementById(data));
+    var tempid = "#" + ev.target.id;
+
+    // Get the HTML content of the order.
+    //
+    cartlist = $(tempid).html();
+
+    // Get the prices from the order.
+    //
+    prices = getPrices(cartlist);
+
+    // Make a some of the prices.
+    //
+    sum = sumTotal(prices);
+
+    // Replace the content of the order with the new sum
+    //
+    $("#totalprice").text(sum + " kr.");
 }
+
+// Get the list of prices from the orders.
+//
+function getPrices (htmlString) {
+
+    // We create a new jQuery object and put the HTML string into it.
+    //
+    var el = $( '<div></div>' );
+    el.html(htmlString);
+
+    // Then we can use jQuery to find all elements in this string.
+    //
+    return $('.price', el); // All the price elements
+}
+
+
+function sumTotal(data) {
+
+    // reset the total sum;
+    //
+    var sum = 0;
+
+    // Go through the elements and collect the internal texts.
+    // Each string is parsed to an integer.
+    //
+    for (i = 0; i < data.length; i++) {
+        sum += parseFloat(data[i].innerText);
+    }
+    return sum;
+}
+
+// Two support functions that connect a table with its order table.
+//
+function orderTable (orderId) {
+    temp = orderId.split("");
+    return "#t"+ temp[2];
+}
+
+function tableOrder (tableId) {
+    temp = tableId.split("");
+    return "#o"+ temp[2];
+}
+
 
 
 

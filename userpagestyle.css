@@ -31,7 +31,7 @@ input {
 }
 
 
-#search {
+#searchbar {
     display: inline-block;
     margin: auto;
     background-color: #006600;
@@ -96,7 +96,7 @@ input {
 #cartlist {
     display: inline;
     float: right;
-    width: 99%;
+    width: 98%;
     height: 200px;
     padding-bottom: 30%;
     border-width:5px;
@@ -106,14 +106,24 @@ input {
     /*border-radius: 20px 20px 20px 20px;*/
 }
 
+.price {
+    /*display: inline-block;*/
+    font-family: "Luminari";
+    font-weight: bolder;
+    /*margin: auto;*/
+    width: 99%;
+    color: white;
+    text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
+}
+
 #totalprice {
-    display: inline-block;
+    /*display: inline-block;*/
     font-family: "Luminari";
     font-weight: bolder;
     margin: auto;
     width: 99%;
-    /*float: right;*/
     color: white;
+    /*float: right;*/
     text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
 }
  #buy {

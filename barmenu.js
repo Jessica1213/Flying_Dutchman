@@ -13,7 +13,7 @@ function getAllMenu(beerlist) {
     len = beerlist.length;
     for (var i = 0; i < len; i++)
     {
-        temp += '<div id="' + beerlist[i].beer_id + '" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="15%">' + beerlist[i].namn + ' <span id="' + "price" + beerlist[i].beer_id + '">' + beerlist[i].price + '</span></div>';
+        temp += '<div id="' + beerlist[i].beer_id + '" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="15%">' + beerlist[i].namn + '&nbsp;'+ ' <span class="price">' + beerlist[i].price + '</span></div>';
         temp += "<br>";
     }
     return temp;
