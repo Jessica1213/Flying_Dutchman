@@ -6,6 +6,7 @@
 // as it is. It will prevent the default behaviour, which is not to accept
 // any drops.
 //
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -39,7 +40,6 @@ function drop(ev) {
     nodeCopy.id = "newId";                 /* We cannot use the same ID */
 
     ev.target.appendChild(nodeCopy);
-
 
     // Move the source element to the target. This is often the standard
     // action.
