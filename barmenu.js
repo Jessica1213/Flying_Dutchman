@@ -1,6 +1,7 @@
 /**
  * Created by jessica on 12/3/15.
  */
+var allbeer = getBeerdata();
 $(function () {
     $("#beerlist").show();
     $(getAllMenu(getBeerdata())).appendTo("#beerlist");
@@ -13,7 +14,7 @@ function getAllMenu(beerlist) {
     len = beerlist.length;
     for (var i = 0; i < len; i++)
     {
-        temp += '<div id="' + beerlist[i].beer_id + '" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="15%">' + beerlist[i].namn + '&nbsp;'+ ' <span class="price">' + beerlist[i].price + '</span></div>';
+        temp += '<div id="' + beerlist[i].beer_id + '" draggable="true" ondragstart="drag(event)"><img src="beer.png" width="10%">' + beerlist[i].namn +' <span class="price">' + beerlist[i].price + '</span></div>';
         temp += "<br>";
     }
     return temp;

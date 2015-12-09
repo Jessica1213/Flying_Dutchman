@@ -103,16 +103,18 @@ input {
     border-style:groove;
     background-color: aliceblue;
     overflow: scroll;
-    /*border-radius: 20px 20px 20px 20px;*/
+    border-radius: 20px 20px 20px 20px;
+    font-family: "Georgia";
+    font-weight: 500;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .price {
-    /*display: inline-block;*/
     font-family: "Luminari";
     font-weight: bolder;
-    /*margin: auto;*/
     width: 99%;
     color: white;
+    margin: auto;
     text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
 }
 
@@ -126,6 +128,14 @@ input {
     /*float: right;*/
     text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
 }
+
+.action {
+    background-color: chocolate;
+    border: 2px darkgrey solid;
+    border-radius: 20px 20px 20px 20px;
+    float: right;
+
+}
  #buy {
      display: inline-block;
      font-family: "Luminari";
@@ -135,6 +145,7 @@ input {
      color: white;
      text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
  }
+
 .button {
     display: inline-block;
     float: left;
@@ -150,12 +161,6 @@ body {
     width: 80%; /* Relative size */
     margin: auto; /* Centers the body on the page.  */
     background-image: url("shelf.png");
-}
-
-
-
-#beerwrapper {
-
 }
 
 #foot {

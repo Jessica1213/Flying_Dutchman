@@ -22,6 +22,8 @@ function change_lang(lan_index)
     document.getElementById('Shoppingcart').innerHTML = myLangArray[3];
     document.getElementById('PriceTotal').innerHTML = myLangArray[4];
     document.getElementById('Pay').innerHTML = myLangArray[5];
+    document.getElementById('Undo').innerHTML = myLangArray[6];
+    document.getElementById('Redo').innerHTML = myLangArray[7];
 }
 
 //Taiwan
@@ -32,6 +34,8 @@ Lang_tw[2] = "將想要的啤酒托移到購物車";
 Lang_tw[3] = "購物車";
 Lang_tw[4] = "總價 :";
 Lang_tw[5] = "現在結帳";
+Lang_tw[6] = "undo"
+Lang_tw[7] = "redo"
 
 //English
 Lang_en = new Array();
@@ -41,6 +45,8 @@ Lang_en[2] = "Drag the beer you want to the order list";
 Lang_en[3] = "Order List";
 Lang_en[4] = "Total Price :";
 Lang_en[5] = "Pay now";
+Lang_en[6] = "undo";
+Lang_en[7] = "redo";
 
 //Swedish
 Lang_se = new Array();
@@ -50,5 +56,6 @@ Lang_se[2] = "Dra öl du vill beställningslistan";
 Lang_se[3] = "beställningslista";
 Lang_se[4] = "Totalbelopp :";
 Lang_se[5] = "Betala nu";
-
+Lang_se[6] = "undo";
+Lang_se[7] = "redo";
 

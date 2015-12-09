@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="userpagestyle.css">
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
     <script type="text/javascript" src="hideMe.js"></script>
-    <script type="text/javascript" src="draganddrop.js"></script>
+    <script type="text/javascript" src="actions.js"></script>
     <script type="text/javascript" src="barmenu.js"></script>
     <script type="text/javascript" src="language.js"></script>
 </head>
@@ -49,6 +49,11 @@
     <div style="height: 50px;line-height: 50px;">
         <img src="cart.png" width="18%" style="float:left">
         &nbsp;&nbsp;<span id="Shoppingcart"></span>
+        <div>
+            <button class="action" type="button" onclick="redo()"><span id="Redo"></span></button>
+            <button class="action" type="button" onclick="undo()"><span id="Undo"></span></button>
+        </div>
+
     </div>
 
     <div id="cartlist" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -57,7 +62,6 @@
     <div class="price">
         <h3>&nbsp;&nbsp;<span id="PriceTotal"></span>&nbsp;&nbsp;<span id="totalprice"></span> </h3>
     </div>
-
 
     <div id="buy" style="height: 50px;line-height: 50px;">
         &nbsp;&nbsp;<span id="Pay"></span>
