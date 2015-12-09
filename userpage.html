@@ -49,19 +49,19 @@
     <div style="height: 50px;line-height: 50px;">
         <img src="cart.png" width="18%" style="float:left">
         &nbsp;&nbsp;<span id="Shoppingcart"></span>
-        <div>
-            <button class="action" type="button" onclick="redo()"><span id="Redo"></span></button>
-            <button class="action" type="button" onclick="undo()"><span id="Undo"></span></button>
-        </div>
 
     </div>
-
+    <div>
+        <button class="action" type="button" onclick="redo()"><span id="Redo"></span></button>
+        <button class="action" type="button" onclick="undo()"><span id="Undo"></span></button>
+    </div>
+    <br>
     <div id="cartlist" ondrop="drop(event)" ondragover="allowDrop(event)">
     </div>
-
-    <div class="price">
+    <br>
+    <dic class="price">
         <h3>&nbsp;&nbsp;<span id="PriceTotal"></span>&nbsp;&nbsp;<span id="totalprice"></span> </h3>
-    </div>
+    </dic>
 
     <div id="buy" style="height: 50px;line-height: 50px;">
         &nbsp;&nbsp;<span id="Pay"></span>
