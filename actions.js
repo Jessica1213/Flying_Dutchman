@@ -108,7 +108,7 @@ function displayOrderlist() {
     var tmp = "";
     var len = orderlist.length;
     for(var l = 0; l < len; l++) {
-            tmp += '<div class="neworder"><img src="beer.png" width="10%">'+ orderlist[l].name + '&nbsp;&nbsp;&nbsp;' + orderlist[l].count + '</div>';
+            tmp += '<div class="neworder"><img src="resources/beer.png" width="10%">'+ orderlist[l].name + '&nbsp;&nbsp;&nbsp;' + orderlist[l].count + '</div>';
             //tmp += + orderlist[l].name + orderlist[l].count;
     }
     sumTotal();

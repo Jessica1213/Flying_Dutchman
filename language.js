@@ -39,7 +39,7 @@ Lang_tw[7] = "redo"
 
 //English
 Lang_en = new Array();
-Lang_en[0] = "Place your order here";
+Lang_en[0] = "Place your order";
 Lang_en[1] = "Search";
 Lang_en[2] = "Drag the beer you want to the order list";
 Lang_en[3] = "Order List";
@@ -52,8 +52,8 @@ Lang_en[7] = "redo";
 Lang_se = new Array();
 Lang_se[0] = "Gör din beställning här";
 Lang_se[1] = "Söka";
-Lang_se[2] = "Dra öl du vill beställningslistan";
-Lang_se[3] = "beställningslista";
+Lang_se[2] = "Dra ölen du vill ha till beställningslistan";
+Lang_se[3] = "Beställningslista";
 Lang_se[4] = "Totalbelopp : ";
 Lang_se[5] = "Betala nu";
 Lang_se[6] = "undo";

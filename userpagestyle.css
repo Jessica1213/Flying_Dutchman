@@ -160,7 +160,7 @@ body {
     font-family: sans-serif;
     width: 80%; /* Relative size */
     margin: auto; /* Centers the body on the page.  */
-    background-image: url("shelf.png");
+    background-image: url("resources/shelf.png");
 }
 
 #foot {
