@@ -11,15 +11,33 @@ $(function () {
 function getAllMenu(beerlist) {
 
     var temp = "";
-    len = beerlist.length;
+ /* len = beerlist.length;
     for (var i = 0; i < len; i++)
     {
         temp += '<div id="' + beerlist[i].beer_id + '" draggable="true" ondragstart="drag(event)"><img src="resources/beer.png" width="10%">' + beerlist[i].namn +' <span class="price">' + beerlist[i].price + '</span></div>';
         temp += "<br>";
-    }
+    }*/
+    beerlist.forEach(function (currentValue) {
+        temp += '<div id="' + currentValue.beer_id + '" draggable="true" ondragstart="drag(event)"><img src="resources/beer.png" width="10%">' + currentValue.namn +' <span class="price">' + currentValue.price + '</span></div>';
+        temp += "<br>";
+    });
     return temp;
 
 }
+
+function search(searchString) {
+    searchString = searchString.toLowerCase();
+    alert(searchString);
+    var results = $(allbeer).map(function() {
+        match = this.namn.toLowerCase().indexOf(searchString) !== -1;
+        alert(this.namn + match);
+        return match ? this : null;
+    })
+}
+
+
+
+
 
 function getBeerdata() {
     return [

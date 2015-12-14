@@ -19,9 +19,9 @@
 </div>
 
 <div id="languagebar">
-    <input type="button" onclick="change_lang(0)" style="background-image: url(resources/UK_Flag.png);">&nbsp;
-    <input type="button" onclick="change_lang(1)" style="background-image: url(resources/Taiwan_Flag.png);">&nbsp;
-    <input type="button" onclick="change_lang(2)" style="background-image: url(resources/Sweden_Flag.png);">&nbsp;
+    <input type="button" onclick="change_lang(0)" style="background-image: url(resources/UK_Flag.png)">&nbsp;
+    <input type="button" onclick="change_lang(1)" style="background-image: url(resources/Taiwan_Flag.png)">&nbsp;
+    <input type="button" onclick="change_lang(2)" style="background-image: url(resources/Sweden_Flag.png)">&nbsp;
 </div>
 
 <div id="headline">
@@ -30,8 +30,9 @@
 </div>
 
 <div class="button" id="searchbar" style="height:35px;line-height:35px;">
-    &nbsp;&nbsp;&nbsp;<span id="Search"></span><img src="resources/searchicon.png" width="5%" style="float:right">
-    <div class="expander" id="searchField">Advance search</div>
+        &nbsp;&nbsp;&nbsp;<span id="Search"></span>&nbsp;&nbsp;&nbsp;
+        <input type="text" title="searchfield" id="searchfield" value="" style="width:80%">
+        <input type="button" value="Search" onclick="search($('#searchfield').val())" style="width: 7%">
 </div>
 
 <div id="beerwrapper">
@@ -59,9 +60,9 @@
     <div id="cartlist" ondrop="drop(event)" ondragover="allowDrop(event)">
     </div>
     <br>
-    <dic class="price">
+    <div class="price">
         <h3>&nbsp;&nbsp;<span id="PriceTotal"></span>&nbsp;&nbsp;<span id="totalprice"></span> </h3>
-    </dic>
+    </div>
 
     <div id="buy" style="height: 50px;line-height: 50px;">
         &nbsp;&nbsp;<span id="Pay"></span>
