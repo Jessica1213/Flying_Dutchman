@@ -4,7 +4,7 @@
 var allbeer = getBeerdata();
 $(function () {
     $("#beerlist").show();
-    $(getAllMenu(getBeerdata())).appendTo("#beerlist");
+    $(getAllMenu(allbeer)).appendTo("#beerlist");
 
 });
 
@@ -18,7 +18,9 @@ function getAllMenu(beerlist) {
         temp += "<br>";
     }*/
     beerlist.forEach(function (currentValue) {
-        temp += '<div id="' + currentValue.beer_id + '" draggable="true" ondragstart="drag(event)"><img src="resources/beer.png" width="10%">' + currentValue.namn +' <span class="price">' + currentValue.price + '</span></div>';
+        temp += '<div id="' + currentValue.beer_id + '" draggable="true" ondragstart="drag(event)">' +
+            '<img src="resources/beer.png" width="10%">' + currentValue.namn + " " + currentValue.namn2 + " " +
+            +' <span class="price">' + currentValue.pub_price + '</span></div>';
         temp += "<br>";
     });
     return temp;
@@ -27,12 +29,15 @@ function getAllMenu(beerlist) {
 
 function search(searchString) {
     searchString = searchString.toLowerCase();
-    alert(searchString);
-    var results = $(allbeer).map(function() {
-        match = this.namn.toLowerCase().indexOf(searchString) !== -1;
-        alert(this.namn + match);
-        return match ? this : null;
-    })
+    //alert(searchString);
+    var results = $.map(allbeer, function(entry) {
+        var match = (entry.namn.toLowerCase().indexOf(searchString) !== -1) || (entry.namn2.toLowerCase().indexOf(searchString) !== -1);
+        //alert(match + " " + entry.namn + " " + entry.namn2 );
+        return match ? entry : null;
+    });
+    //alert(results);
+    $("#beerlist").empty();
+    $(getAllMenu(results)).appendTo("#beerlist");
 }
 
 

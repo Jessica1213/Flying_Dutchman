@@ -9,7 +9,7 @@ var step = 0;
 
 function reset(item) {
     item.id="";
-    item.price="";
+    item.pub_price="";
     item.count="";
     item.name="";
 }
@@ -36,8 +36,8 @@ function drop(ev) {
         for(var j = 0; j < len; j++) {
             var tmp = allbeer[j];
             if(newitem.id == tmp.beer_id) {
-                newitem.name = tmp.namn;
-                newitem.price = tmp.price;
+                newitem.name = tmp.namn + " " + tmp.namn2;
+                newitem.pub_price = tmp.pub_price;
                 newitem.count = 1;
             }
         }
@@ -58,8 +58,7 @@ function sumTotal() { // Get the list of prices from the orders.
     var len = orderlist.length;
     for (var i=0; i<len; i++)
     {
-        var price =orderlist[i].price *orderlist[i].count;
-        sum+=price;
+        sum += orderlist[i].pub_price *orderlist[i].count;
     }
     console.log(sum);
     $("#totalprice").text(sum + " kr."); // Replace the content of the order with the new sum
