@@ -5,6 +5,7 @@
     <title>Flying Dutchman 8</title>
     <link rel="stylesheet" type="text/css" href="general.css">
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="signin.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("input").focus(function(){
@@ -24,12 +25,12 @@
         Login to order the beer!</h4>
     </div>
     <div id="username">
-        <h3>Username: <input type="text" /> </h3>
+        <h3>Username: <input type="text" title="username" id="usernamefield" /> </h3>
     </div>
     <div id="password">
-        <h3>Password: <input type="text" /> </h3>
+        <h3>Password: <input type="text" title="password" id="passwordfield"/> </h3>
     </div>
-    <a href="userpage.html"><div class="button" id="login"> Login </div></a>
+    <input type="button" value="Login" id="login" onclick="signIn($('#usernamefield').val(), $('#passwordfield').val())">
 </div>
 </body>
 </html>
