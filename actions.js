@@ -4,7 +4,8 @@
 
 var lastundo;
 var lastredo;
-var orderlist = [];
+//var orderlist = [];
+var steplist = [];
 var step = 0;
 
 function reset(item) {
@@ -14,7 +15,7 @@ function reset(item) {
     item.name="";
 }
 function allowDrop(ev) {
-        ev.preventDefault();
+    ev.preventDefault();
 
 }
 
@@ -29,30 +30,36 @@ function drop(ev) {
 
     var data = ev.dataTransfer.getData("text");
 
-        var newitem = document.getElementById(data).cloneNode(true);
-        newitem.id = data;
-        newitem.draggable = false;
-        var len = getBeerdata().length;
-        for(var j = 0; j < len; j++) {
-            var tmp = allbeer[j];
-            if(newitem.id == tmp.beer_id) {
-                newitem.name = tmp.namn + " " + tmp.namn2;
-                newitem.pub_price = tmp.pub_price;
-                newitem.count = 1;
-            }
+    var newitem = document.getElementById(data).cloneNode(true);
+    newitem.id = data;
+    newitem.draggable = false;
+    var len = getBeerdata().length;
+    for(var j = 0; j < len; j++) {
+        var tmp = allbeer[j];
+        if(newitem.id == tmp.beer_id) {
+            newitem.name = tmp.namn + " " + tmp.namn2;
+            newitem.pub_price = tmp.pub_price;
+            newitem.count = 1;
         }
-        lastundo = newitem;
-        lastredo = newitem;
-        addToOrderlist(newitem);
-        showOrderlist();
-        displayOrderlist();
+    }
+    lastundo = newitem;
+    lastredo = newitem;
 
-        //ev.target.appendChild(newitem); //把東西放過去 看得到圖案
+    var orderlist = [];
+    if(step==0) {
+        orderlist = [];
+    }
+    else orderlist = steplist[step-1];
+    addToOrderlist(newitem, orderlist);
+    showOrderlist(orderlist);
+    displayOrderlist(orderlist);
+
+    //ev.target.appendChild(newitem); //把東西放過去 看得到圖案
 
 
 }
 
-function sumTotal() { // Get the list of prices from the orders.
+function sumTotal(orderlist) { // Get the list of prices from the orders.
 
     var sum=0;
     var len = orderlist.length;
@@ -65,7 +72,7 @@ function sumTotal() { // Get the list of prices from the orders.
 }
 
 
-function addToOrderlist(item) {
+function addToOrderlist(item, orderlist) {
     var len = orderlist.length;
     if(len == 0) {
         orderlist.push(item);
@@ -86,11 +93,26 @@ function addToOrderlist(item) {
             orderlist.push(item);
         }
     }
+    steplist.push(orderlist);
+    console.log(steplist[0][0].name);
+    var len = steplist.length;
+    console.log("length: "+len);
+    //steplist.pop();
+    //len = steplist.length;
+    //console.log("length2: "+len);
+    for(var l = 0; l<len; l++) {
+        var len2 = steplist[l].length;
+        console.log("length"+l+": "+len2);
+        for(var k = 0; k<len2; k++) {
+            console.log(steplist[l][k].name +" "+steplist[l][k].count);
+        }
+    }
+
     step+=1;
 
 }
 
-function showOrderlist() {
+function showOrderlist(orderlist) {
 
     for(var a = 0; a < orderlist.length; a++) {
         var temp=orderlist[a];
@@ -101,16 +123,16 @@ function showOrderlist() {
     }
 }
 
-function displayOrderlist() {
+function displayOrderlist(orderlist) {
 
 
     var tmp = "";
     var len = orderlist.length;
     for(var l = 0; l < len; l++) {
-            tmp += '<div class="neworder"><img src="resources/beer.png" width="10%">'+ orderlist[l].name + '&nbsp;&nbsp;&nbsp;' + orderlist[l].count + '</div>';
-            //tmp += + orderlist[l].name + orderlist[l].count;
+        tmp += '<div class="neworder"><img src="resources/beer.png" width="10%">'+ orderlist[l].name + '&nbsp;&nbsp;&nbsp;' + orderlist[l].count + '</div>';
+        //tmp += + orderlist[l].name + orderlist[l].count;
     }
-    sumTotal();
+    sumTotal(orderlist);
     //tmp += '<span id="PriceTotal"></span>'+total;
 
     $(".neworder").remove();
@@ -118,34 +140,38 @@ function displayOrderlist() {
 }
 
 function undo() {
-    var len = orderlist.length;
-    for(var i =0; i < len; i++)
-    {
-        if(lastundo.id==orderlist[i].id) {
-            if(orderlist[i].count>1) orderlist[i].count-=1;
-            else {
-                orderlist.pop();
-            }
 
-        }
+    //var len = orderlist.length;
+    //for(var i =0; i < len; i++)
+    //{
+    //    if(lastundo.id==orderlist[i].id) {
+    //        if(orderlist[i].count>1) orderlist[i].count-=1;
+    //        else {
+    //            orderlist.pop();
+    //        }
+    //
+    //    }
+    //
+    //}
 
-    }
-    displayOrderlist();
+    displayOrderlist(steplist[step--]);
     //lastredo=lastundo;
     //reset(lastundo);
 }
 
 function redo() {
-    var len = orderlist.length;
-    var i;
-    for(i =0; i < len; i++)
-    {
-        if(lastredo.id==orderlist[i].id) {
-            orderlist[i].count+=1;
-            break;
-        }
-    }
-    if(i==len) orderlist.push(lastredo);
+    //var len = orderlist.length;
+    //var i;
+    //for(i =0; i < len; i++)
+    //{
+    //    if(lastredo.id==orderlist[i].id) {
+    //        orderlist[i].count+=1;
+    //        break;
+    //    }
+    //}
+    //if(i==len) orderlist.push(lastredo);
+
+    displayOrderlist(steplist[step++]);
     displayOrderlist();
     //reset(lastredo);
 }
