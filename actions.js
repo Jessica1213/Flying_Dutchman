@@ -4,13 +4,8 @@
 
 var steplist = [];
 var step = 0;
-
-var a = [ 'apple', 'orange', 'grape' ];
-b = a.slice(0);
-b[0] = 'cola';
-console.log("a: " +a);
-console.log("b: " +b);
-
+var undobutton = false;
+var redobutton = false;
 function reset(item) {
     item.id="";
     item.pub_price="";
@@ -47,18 +42,6 @@ function drop(ev) {
     }
 
     steplist.push(addToOrderlist(newitem));
-
-    console.log("step: " + step);
-    var len = steplist.length;
-    console.log("length: "+len);
-    for(var l = 0; l<len; l++) {
-        var len2 = steplist[l].length;
-        console.log("length"+l+": "+len2);
-        for(var k = 0; k<len2; k++) {
-            console.log(steplist[l][k].name +" "+steplist[l][k].count);
-        }
-    }
-    showOrderlist(steplist[step-1]);
     displayOrderlist(steplist[step-1]);
 
     //ev.target.appendChild(newitem); //把東西放過去 看得到圖案
@@ -85,6 +68,16 @@ function addToOrderlist(item) {
     if(step!=0) {
         orderlist = steplist[step-1].slice(0);
     }
+    if(undobutton==true){
+        var popitem = steplist.length-step;
+        while(popitem>0) {
+            console.log("pop");
+            steplist.pop();
+            popitem--;
+        }
+        undobutton=false;
+    }
+
     var k;
     var neworderlist = JSON.parse(JSON.stringify(orderlist));
     var len = neworderlist.length;
@@ -99,32 +92,12 @@ function addToOrderlist(item) {
         console.log("push");
         neworderlist = orderlist.concat(item);
     }
-
-    //for(var a = 0; a<len; a++) {
-    //    console.log("****** old: "+orderlist[a].name + orderlist[a].count+"******");
-    //}
-    //var len2 = neworderlist.length;
-    //for(var b = 0; b<len2; b++) {
-    //    console.log("****** new: "+neworderlist[b].name + neworderlist[b].count+"******");
-    //}
-
     step++;
     return neworderlist;
 }
 
-function showOrderlist(orderlist) {
-
-    for(var a = 0; a < orderlist.length; a++) {
-        var temp=orderlist[a];
-        for(var l = 0; l < temp.length; l++) {
-            console.log(temp[l].name);
-            console.log(temp[l].count);
-        }
-    }
-}
 
 function displayOrderlist(orderlist) {
-
 
     var tmp = "";
     var len = orderlist.length;
@@ -134,6 +107,17 @@ function displayOrderlist(orderlist) {
     sumTotal(orderlist);
     $(".neworder").remove();
     $(tmp).appendTo("#cartlist");
+
+    console.log("step: " + step);
+    var len = steplist.length;
+    console.log("length: "+len);
+    for(var l = 0; l<len; l++) {
+        var len2 = steplist[l].length;
+        console.log("length"+l+": "+len2);
+        for(var k = 0; k<len2; k++) {
+            console.log(steplist[l][k].name +" "+steplist[l][k].count);
+        }
+    }
 }
 
 function undo() {
@@ -147,6 +131,7 @@ function undo() {
         displayOrderlist([]);
     }
     console.log("-------step "+step +"--------");
+    undobutton = true;
 }
 
 function redo() {
