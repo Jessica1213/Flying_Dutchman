@@ -19,8 +19,8 @@ function getAllMenu(beerlist) {
     }*/
     beerlist.forEach(function (currentValue) {
         temp += '<div id="' + currentValue.beer_id + '" draggable="true" ondragstart="drag(event)">' +
-            '<img src="resources/beer.png" width="10%">' + currentValue.namn + " " + currentValue.namn2 + " " +
-            +' <span class="price"> '+ " " + + currentValue.pub_price + '</span></div>';
+            '<img src="resources/beer.png" width="10%">' + currentValue.namn + " " + currentValue.namn2 + ", "
+            + currentValue.pub_price + " SEK" + '</div>';
         temp += "<br>";
     });
     return temp;
