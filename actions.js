@@ -5,7 +5,8 @@
 var steplist = [];
 var step = 0;
 var undobutton = false;
-var redobutton = false;
+var undobeforeredo = false;
+var lastundo;
 function reset(item) {
     item.id="";
     item.pub_price="";
@@ -72,7 +73,7 @@ function addToOrderlist(item) {
         var popitem = steplist.length-step;
         while(popitem>0) {
             console.log("pop");
-            steplist.pop();
+            lastundo = steplist.pop();
             popitem--;
         }
         undobutton=false;
@@ -125,6 +126,7 @@ function undo() {
     step--;
     if(step>0) {
         displayOrderlist(steplist[step-1]);
+        lastundo = steplist[step-1];
     }
     else {
         step=0;
@@ -132,17 +134,26 @@ function undo() {
     }
     console.log("-------step "+step +"--------");
     undobutton = true;
+    undobeforeredo = true;
 }
 
 function redo() {
 
     step++;
-    if(step<=steplist.length) {
+    if(undobeforeredo) {
+        steplist.push(lastundo);
         displayOrderlist(steplist[step-1]);
+        undobeforeredo = false;
     }
     else {
-        step = steplist.length;
+        if(step<=steplist.length) {
+            displayOrderlist(steplist[step-1]);
+        }
+        else {
+            step = steplist.length;
+        }
     }
+
     console.log("-------step "+step +"--------");
 }
 
