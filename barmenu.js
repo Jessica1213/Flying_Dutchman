@@ -20,7 +20,7 @@ function getAllMenu(beerlist) {
     beerlist.forEach(function (currentValue) {
         temp += '<div id="' + currentValue.beer_id + '" draggable="true" ondragstart="drag(event)">' +
             '<img src="resources/beer.png" width="10%">' + currentValue.namn + " " + currentValue.namn2 + " " +
-            +' <span class="price">' + currentValue.pub_price + '</span></div>';
+            +' <span class="price"> '+ " " + + currentValue.pub_price + '</span></div>';
         temp += "<br>";
     });
     return temp;

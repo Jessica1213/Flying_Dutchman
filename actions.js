@@ -5,6 +5,12 @@
 var steplist = [];
 var step = 0;
 
+var a = [ 'apple', 'orange', 'grape' ];
+b = a.slice(0);
+b[0] = 'cola';
+console.log("a: " +a);
+console.log("b: " +b);
+
 function reset(item) {
     item.id="";
     item.pub_price="";
@@ -40,12 +46,7 @@ function drop(ev) {
         }
     }
 
-    var orderlist = [];
-    if(step!=0) {
-        orderlist = steplist[step-1].slice(0);
-    }
-
-    steplist.push(addToOrderlist(newitem, orderlist));
+    steplist.push(addToOrderlist(newitem));
 
     console.log("step: " + step);
     var len = steplist.length;
@@ -78,29 +79,35 @@ function sumTotal(orderlist) { // Get the list of prices from the orders.
 }
 
 
-function addToOrderlist(item, orderlist) {
-    var len = orderlist.length;
-    var neworderlist;
-    if(len == 0) {
+function addToOrderlist(item) {
+
+    var orderlist = [];
+    if(step!=0) {
+        orderlist = steplist[step-1].slice(0);
+    }
+    var k;
+    var neworderlist = JSON.parse(JSON.stringify(orderlist));
+    var len = neworderlist.length;
+    for (k=0; k<len; k++) {
+        if(neworderlist[k].name==item.name) {
+            neworderlist[k].count++;
+            console.log("same");
+            break;
+        }
+    }
+    if(k==len) {
+        console.log("push");
         neworderlist = orderlist.concat(item);
     }
-    else {
-        var k;
-        neworderlist = orderlist.slice(0);
-        for (k=0; k<len; k++) {
-            console.log(neworderlist[k].name);
-            if(neworderlist[k].id==item.id) {
-                neworderlist[k].count++;
-                console.log("same");
-                break;
-            }
 
-        }
-        if(k==len) {
-            console.log("push");
-            neworderlist = orderlist.concat(item);
-        }
-    }
+    //for(var a = 0; a<len; a++) {
+    //    console.log("****** old: "+orderlist[a].name + orderlist[a].count+"******");
+    //}
+    //var len2 = neworderlist.length;
+    //for(var b = 0; b<len2; b++) {
+    //    console.log("****** new: "+neworderlist[b].name + neworderlist[b].count+"******");
+    //}
+
     step++;
     return neworderlist;
 }
@@ -152,4 +159,51 @@ function redo() {
         step = steplist.length;
     }
     console.log("-------step "+step +"--------");
+}
+
+Array.prototype.clone = function() {
+    return this.slice(0);
+}
+
+function deepCopy(obj) {
+    if (typeof obj == 'object') {
+        if (isArray(obj)) {
+            var l = obj.length;
+            var r = new Array(l);
+            for (var i = 0; i < l; i++) {
+                r[i] = deepCopy(obj[i]);
+            }
+            return r;
+        } else {
+            var r = {};
+            r.prototype = obj.prototype;
+            for (var k in obj) {
+                r[k] = deepCopy(obj[k]);
+            }
+            return r;
+        }
+    }
+    return obj;
+}
+
+var ARRAY_PROPS = {
+    length: 'number',
+    sort: 'function',
+    slice: 'function',
+    splice: 'function'
+};
+
+/**
+ * Determining if something is an array in JavaScript
+ * is error-prone at best.
+ */
+function isArray(obj) {
+    if (obj instanceof Array)
+        return true;
+    // Otherwise, guess:
+    for (var k in ARRAY_PROPS) {
+        if (!(k in obj && typeof obj[k] == ARRAY_PROPS[k]))
+            return false;
+    }
+    return true;
 }
