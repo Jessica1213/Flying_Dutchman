@@ -2,9 +2,6 @@
  * Created by jessica on 11/24/15.
  */
 
-var lastundo;
-var lastredo;
-//var orderlist = [];
 var steplist = [];
 var step = 0;
 
@@ -42,8 +39,6 @@ function drop(ev) {
             newitem.count = 1;
         }
     }
-    lastundo = newitem;
-    lastredo = newitem;
 
     var orderlist = [];
     if(step!=0) {
