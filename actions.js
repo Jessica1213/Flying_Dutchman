@@ -46,13 +46,24 @@ function drop(ev) {
     lastredo = newitem;
 
     var orderlist = [];
-    if(step==0) {
-        orderlist = [];
+    if(step!=0) {
+        orderlist = steplist[step-1].slice(0);
     }
-    else orderlist = steplist[step-1];
-    addToOrderlist(newitem, orderlist);
-    showOrderlist(orderlist);
-    displayOrderlist(orderlist);
+
+    steplist.push(addToOrderlist(newitem, orderlist));
+
+    console.log("step: " + step);
+    var len = steplist.length;
+    console.log("length: "+len);
+    for(var l = 0; l<len; l++) {
+        var len2 = steplist[l].length;
+        console.log("length"+l+": "+len2);
+        for(var k = 0; k<len2; k++) {
+            console.log(steplist[l][k].name +" "+steplist[l][k].count);
+        }
+    }
+    showOrderlist(steplist[step-1]);
+    displayOrderlist(steplist[step-1]);
 
     //ev.target.appendChild(newitem); //把東西放過去 看得到圖案
 
@@ -74,15 +85,17 @@ function sumTotal(orderlist) { // Get the list of prices from the orders.
 
 function addToOrderlist(item, orderlist) {
     var len = orderlist.length;
+    var neworderlist;
     if(len == 0) {
-        orderlist.push(item);
+        neworderlist = orderlist.concat(item);
     }
     else {
-
         var k;
+        neworderlist = orderlist.slice(0);
         for (k=0; k<len; k++) {
-            if(orderlist[k].id==item.id) {
-                orderlist[k].count++;
+            console.log(neworderlist[k].name);
+            if(neworderlist[k].id==item.id) {
+                neworderlist[k].count++;
                 console.log("same");
                 break;
             }
@@ -90,26 +103,11 @@ function addToOrderlist(item, orderlist) {
         }
         if(k==len) {
             console.log("push");
-            orderlist.push(item);
+            neworderlist = orderlist.concat(item);
         }
     }
-    steplist.push(orderlist);
-    console.log(steplist[0][0].name);
-    var len = steplist.length;
-    console.log("length: "+len);
-    //steplist.pop();
-    //len = steplist.length;
-    //console.log("length2: "+len);
-    for(var l = 0; l<len; l++) {
-        var len2 = steplist[l].length;
-        console.log("length"+l+": "+len2);
-        for(var k = 0; k<len2; k++) {
-            console.log(steplist[l][k].name +" "+steplist[l][k].count);
-        }
-    }
-
-    step+=1;
-
+    step++;
+    return neworderlist;
 }
 
 function showOrderlist(orderlist) {
@@ -130,48 +128,33 @@ function displayOrderlist(orderlist) {
     var len = orderlist.length;
     for(var l = 0; l < len; l++) {
         tmp += '<div class="neworder"><img src="resources/beer.png" width="10%">'+ orderlist[l].name + '&nbsp;&nbsp;&nbsp;' + orderlist[l].count + '</div>';
-        //tmp += + orderlist[l].name + orderlist[l].count;
     }
     sumTotal(orderlist);
-    //tmp += '<span id="PriceTotal"></span>'+total;
-
     $(".neworder").remove();
     $(tmp).appendTo("#cartlist");
 }
 
 function undo() {
 
-    //var len = orderlist.length;
-    //for(var i =0; i < len; i++)
-    //{
-    //    if(lastundo.id==orderlist[i].id) {
-    //        if(orderlist[i].count>1) orderlist[i].count-=1;
-    //        else {
-    //            orderlist.pop();
-    //        }
-    //
-    //    }
-    //
-    //}
-
-    displayOrderlist(steplist[step--]);
-    //lastredo=lastundo;
-    //reset(lastundo);
+    step--;
+    if(step>0) {
+        displayOrderlist(steplist[step-1]);
+    }
+    else {
+        step=0;
+        displayOrderlist([]);
+    }
+    console.log("-------step "+step +"--------");
 }
 
 function redo() {
-    //var len = orderlist.length;
-    //var i;
-    //for(i =0; i < len; i++)
-    //{
-    //    if(lastredo.id==orderlist[i].id) {
-    //        orderlist[i].count+=1;
-    //        break;
-    //    }
-    //}
-    //if(i==len) orderlist.push(lastredo);
 
-    displayOrderlist(steplist[step++]);
-    displayOrderlist();
-    //reset(lastredo);
+    step++;
+    if(step<=steplist.length) {
+        displayOrderlist(steplist[step-1]);
+    }
+    else {
+        step = steplist.length;
+    }
+    console.log("-------step "+step +"--------");
 }
